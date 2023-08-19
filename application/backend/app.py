@@ -127,30 +127,40 @@ def read_response(response_name):
 def handle_market_research():
     try:
         customer_query = request.json.get("category", "")
-        embeddings_model = OpenAIEmbeddings()
         # Initialize the vectorstore as empty
 
-        embedding_size = 1536
-        index = faiss.IndexFlatL2(embedding_size)
-        vectorstore = FAISS(
-            embeddings_model.embed_query, index, InMemoryDocstore({}), {}
+        search = SerpAPIWrapper()
+        tools = [
+            Tool(
+                name="search",
+                func=search.run,
+                description="useful for when you need to answer questions ",
+            ),
+            WriteFileTool(),
+            ReadFileTool(),
+        ]
+
+        vectorstore = setup_vectorstore()
+
+        agent = AutoGPT.from_llm_and_tools(
+            ai_name="MarketResearchBot",
+            ai_role="Helps in Business ideas",
+            tools=tools,
+            llm=ChatOpenAI(temperature=0),
+            memory=vectorstore.as_retriever(),
+        )
+        agent.chain.verbose = True
+
+        result = agent.run(
+            [
+                f"Understand the business idea {customer_query} ",
+                f"Guide users through the process of refining their business idea",
+                f"save the report in the `research` directory",
+            ],
+            limit=4,
         )
 
-        llm = OpenAI(temperature=0)
-        verbose = False
-        max_iterations = 3
-
-        agent = BabyAGI.from_llm(
-            llm=llm,
-            vectorstore=vectorstore,
-            verbose=verbose,
-            max_iterations=max_iterations,
-        )
-
-        objective = f"Give me most popular product in this category {customer_query}"
-        agent({"objective": objective})
-
-        return jsonify({"status": "success", "result": agent})
+        return jsonify({"status": "success", "result": result})
     except Exception as e:
         return handle_error(e)
 

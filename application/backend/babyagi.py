@@ -16,7 +16,7 @@ from langchain.vectorstores.faiss import FAISS
 
 os.environ[
     "OPENAI_API_KEY"
-] = "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"  # https://platform.openai.com (Thx Michael from Twitter)
+] = "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"  # https://platform.openai.com (Thx Michael from Twitter)
 os.environ[
     "SERPAPI_API_KEY"
 ] = "744ec9c4b432550e6b3fe19b6c2dd5da675b0cf18d25095d0f00d9723c2284f4"  # https://serpapi.com/
@@ -43,9 +43,6 @@ class TaskCreationChain(LLMChain):
             " The last completed task has the result: {result}."
             " This result was based on this task description: {task_description}."
             " These are incomplete tasks: {incomplete_tasks}."
-            " Based on the result, create new tasks to be completed"
-            " by the AI system that do not overlap with incomplete tasks."
-            " Return the tasks as an array."
         )
         prompt = PromptTemplate(
             template=task_creation_template,
@@ -296,7 +293,7 @@ class BabyAGI(Chain, BaseModel):
         )
 
 
-# OBJECTIVE = "Be an IPL Cricket Reporter of the most recent match"
+# OBJECTIVE = "Give me most popular product in this category electronics"
 
 # llm = OpenAI(temperature=0)
 

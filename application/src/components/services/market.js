@@ -7,7 +7,7 @@
 // const Container = styled.div`
 //     width: 100%;
 //     max-height: 400px;
-    
+
 //     width: 1100px;
 //     padding: 20px;
 //     overflow-y: scroll;
@@ -36,8 +36,8 @@
 //   display: flex;
 //   flex-direction: column;
 //   margin-bottom: 20px;
-  
-  
+
+
 //   @media (min-width: 768px) {
 //     flex-direction: row;
 //     justify-content: space-between;
@@ -59,7 +59,7 @@
 //     border: 1px solid #ccc;
 //     border-radius: 4px;
 //     margin-bottom: 10px;
-    
+
 //     @media (min-width: 768px) {
 //         margin-bottom: 0;
 //         width: 60%;
