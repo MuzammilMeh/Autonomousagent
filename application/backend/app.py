@@ -1,4 +1,3 @@
-
 import os
 from flask import Flask, jsonify, request
 from langchain.utilities import SerpAPIWrapper
@@ -154,7 +153,6 @@ def handle_market_research():
         result = agent.run(
             [
                 f"Understand the business idea {customer_query} ",
-                f"Guide users through the process of refining their business idea",
                 f"save the report in the `research` directory",
             ],
             limit=4,
