@@ -7841,6 +7841,11 @@
   dependencies:
     "@remix-run/router" "1.1.0"
 
+"react-script@^2.0.5":
+  "integrity" "sha512-hLFLMFAH3Rr0VJisBz/bPyaJxMEimQGvuVOBXyn3t/nmlbV6mF+nghCPoY1V4dzIi+M1A8iyyXId1cgg8eS6XA=="
+  "resolved" "https://registry.npmjs.org/react-script/-/react-script-2.0.5.tgz"
+  "version" "2.0.5"
+
 "react-scripts@^5.0.1":
   "integrity" "sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ=="
   "resolved" "https://registry.npmjs.org/react-scripts/-/react-scripts-5.0.1.tgz"
