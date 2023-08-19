@@ -59,6 +59,9 @@ export const Navbar = ({ toggle }) => {
             <NavItem>
               <NavLink to="market">Market</NavLink> 
             </NavItem>
+            <NavItem>
+              <NavLinks to="benefits">Benefit</NavLinks> 
+            </NavItem>
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signin">Sign In</NavBtnLink>

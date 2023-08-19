@@ -52,7 +52,7 @@ import {
 } from "./ServicesElements";
 import Chatbot from "./Chatbot";
 // import Icon1 from "../../images/space.svg";
-import Icon2 from "../../images/online.svg";
+// import Icon2 from "../../images/online.svg";
 // import Icon3 from "../../images/real-time.svg";
 
 const Services = () => {
