@@ -28,10 +28,10 @@ const HeroSection = () => {
         <h1 className="h1-hero">
           Transforming Businesses with Integrated AI Solutions
         </h1>
-        <p className="hero-text">
+        {/* <p className="hero-text">
           Sign up today and receive $250 in credit for your next successful
           project.
-        </p>
+        </p> */}
         <HeroBtnWrapper>
           <ButtonR
             to="/signin"
