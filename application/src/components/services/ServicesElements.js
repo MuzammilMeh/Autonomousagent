@@ -16,43 +16,34 @@ export const ServicesContainer = styled.div`
     @media screen and (max-width: 480px) {
         min-height: 1300px;
     }
-
-`
+`;
 
 export const ServicesWrapper = styled.div`
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     grid-gap: 16px;
-    padding: 20px 50px;
-
-    @media screen and (max-width: 1000px) {
-        grid-template-columns: 1fr 1fr;
-        padding: 20px 50px;
-    }
+    padding: 20px 30px;
 
     @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
-        //padding: 0 20px;
-        padding: 20px 50px;
+        padding: 20px 20px;
     }
-
-`
+`;
 
 export const ServicesCard = styled.div`
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 10px;
-    max-height: 900px;
-    padding: 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease-in-out;
-    width: 100%; /* Set full width by default */
+background: white;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+transition: all 0.2s ease-in-out;
+width: 100%;
+
 
     @media screen and (min-width: 480px) {
         width: 90%; /* Adjust width for small screens */

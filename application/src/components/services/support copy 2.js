@@ -1,28 +1,17 @@
 import React, { useState } from "react";
-import { Navbar } from "./../components/navbar";
-import { Sidebar } from "./../components/sidebar";
+import { Navbar } from "../navbar";
+import { Sidebar } from "../sidebar";
 import styled from "styled-components";
-import Chatbot from "./Chatbot";
-import Video from "../videos/bgvideo.mp4";
+// import Chatbot from "./Chatbot";
+import Video from "../../videos/bgvideo.mp4"
 // import Icon2 from "../images/online.svg"
-import QueryResponse from "./QueryResponse"
+import Ai_Agent from "./ai_agent"
 
 const Support = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
-  };
-  // const [hover, setHover] = useState(false);
-
-  // const onHover = () => {
-  //   setHover(!hover);
-  // };
-
-  const [selectedService, setSelectedService] = useState("chatbot");
-
-  const handleServiceChange = (service) => {
-    setSelectedService(service);
   };
 
   return (
@@ -34,30 +23,10 @@ const Support = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <ServiceButtons>
-          <ServiceButton
-            selected={selectedService === "chatbot"}
-            onClick={() => handleServiceChange("chatbot")}
-          >
-            Chatbot
-          </ServiceButton>
-          <ServiceButton
-            selected={selectedService === "callagent"}
-            onClick={() => handleServiceChange("callagent")}
-          >
-            Call Agent
-          </ServiceButton>
-          <ServiceButton
-            selected={selectedService === "queryresponse"}
-            onClick={() => handleServiceChange("queryresponse")}
-          >
-            Query Response
-          </ServiceButton>
-        </ServiceButtons>
+      
         <ServicesContainer id="services">
-          {selectedService === "chatbot" && <Chatbot />}
-          {selectedService === "callagent" && <h1>Call Agent</h1>}
-          {selectedService === "queryresponse" && <QueryResponse />}
+        
+          <Ai_Agent />
         </ServicesContainer>
       </HeroContent>
     </HeroContainer>

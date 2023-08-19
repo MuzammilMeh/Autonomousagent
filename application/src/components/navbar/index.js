@@ -46,19 +46,17 @@ export const Navbar = ({ toggle }) => {
             <NavItem>
               <NavLinks to="discover">Discover</NavLinks>
             </NavItem>
+            
             <NavItem>
               <NavLinks to="services">Services</NavLinks>
             </NavItem>
             <NavItem>
+              <NavLinks to="benefits">Benefit</NavLinks> 
+            </NavItem>
+            <NavItem>
               <NavLinks to="signup">Sign Up</NavLinks>
             </NavItem>
-            <NavItem>
-              <NavLink to="support">Support</NavLink> 
-              {/* <Link to="support">Support</Link> */}
-            </NavItem>
-            <NavItem>
-              <NavLink to="market">Market</NavLink> 
-            </NavItem>
+   
           </NavMenu>
           <NavBtn>
             <NavBtnLink to="/signin">Sign In</NavBtnLink>
