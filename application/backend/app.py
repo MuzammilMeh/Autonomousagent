@@ -126,6 +126,7 @@ def read_response(response_name):
 def handle_market_research():
     try:
         customer_query = request.json.get("category", "")
+        embeddings_model = OpenAIEmbeddings()
         # Initialize the vectorstore as empty
 
         search = SerpAPIWrapper()

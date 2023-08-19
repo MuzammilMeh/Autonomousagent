@@ -7,7 +7,7 @@
 // const Container = styled.div`
 //     width: 100%;
 //     max-height: 400px;
-
+    
 //     width: 1100px;
 //     padding: 20px;
 //     overflow-y: scroll;
@@ -36,8 +36,8 @@
 //   display: flex;
 //   flex-direction: column;
 //   margin-bottom: 20px;
-
-
+  
+  
 //   @media (min-width: 768px) {
 //     flex-direction: row;
 //     justify-content: space-between;
@@ -59,7 +59,7 @@
 //     border: 1px solid #ccc;
 //     border-radius: 4px;
 //     margin-bottom: 10px;
-
+    
 //     @media (min-width: 768px) {
 //         margin-bottom: 0;
 //         width: 60%;
@@ -292,7 +292,7 @@ background-color: #B05FFD;
 border-radius: 16px;
 display: flex;
 flex-direction: column;
-align-items: center;
+// align-items: center;
 margin: 0 auto;
 @media (max-width: 1200px) {
   width: 100%;
@@ -334,8 +334,9 @@ padding: 8px 12px;
 border-radius: 5px;
 cursor: pointer;
 margin: 20px;
+width:250px;
 display: flex;
-align-items: center;
+// align-items: center;
 justify-content: center;
 .loading-icon {
   margin-right: 5px;
@@ -354,11 +355,13 @@ const Loading = styled.p`
 `;
 
 const ResponsesList = styled.div`
-  flex: 1;
-  margin-right: 20px;
+flex: 1;
+margin-right: 0;
+margin-bottom: 20px;
   @media (min-width: 768px) {
     flex: none;
-    margin-right: 0;
+    margin-right: 20px;
+    margin-bottom: 0;
   }
 `;
 
@@ -381,6 +384,19 @@ ${(props) =>
     color: #007bff;
 `}
 `;
+const ResponsesContainer = styled.div`
+margin-top: 100px;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+@media (min-width: 768px) {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+`;
 
 const ContentContainer = styled.div`
 max-width: 800px;
@@ -390,8 +406,8 @@ border-radius: 10px;
 padding: 20px;
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 display: flex;
-flex-direction: column;
-align-items: center;
+// flex-direction: column;
+// align-items: center;
 `;
 
 const ResearchApp = () => {
@@ -399,6 +415,8 @@ const ResearchApp = () => {
   const [responses, setResponses] = useState([]);
   const [responseContent, setResponseContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedResponse, setSelectedResponse] = useState('');
+
 
   const fetchResearchResults = async () => {
     setIsLoading(true);
@@ -442,7 +460,7 @@ const ResearchApp = () => {
   const performResearch = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:5000/research', { category: query });
+      const response = await axios.post('http://127.0.0.1:5000/research', { research: query });
       if (response.data.status === 'success') {
         setResponseContent(response.data.result);
       } else {
@@ -468,15 +486,15 @@ const ResearchApp = () => {
 
   return (
     <Container ref={ref}>
-      <Title>Market Research Product</Title>
       <InputContainer>
+      <Title>Market Research Product</Title>
+
         <Input
           type="text"
           value={query}
           onChange={handleQueryChange}
           placeholder="Enter a product category"
         />
-      </InputContainer>
       <SubmitButton onClick={performResearch}>
         {isLoading ? (
           <AiOutlineLoading3Quarters className="loading-icon" />
@@ -484,27 +502,32 @@ const ResearchApp = () => {
           'Fetch Responses'
         )}
       </SubmitButton>
-      <ContentContainer>
-        {/* <ResponsesContainer> */}
+      </InputContainer>
+
+       {/* <ContentContainer> */}
+        <ResponsesContainer>
           <ResponsesList>
-            {responses.map((response) => (
-              <ResponseItem
-                key={response}
-                onClick={() => fetchResponseContent(response)}
-              >
-                {response}
-              </ResponseItem>
-            ))}
+          <h2 style={{ color: "white" }}>Recently Research</h2>
+          {responses.map((response) => (
+                        <ResponseItem
+                            key={response}
+                            onClick={() => fetchResponseContent(response)}
+                            selected={response === selectedResponse}
+                        >
+                            {response}
+                        </ResponseItem>
+                    ))}
           </ResponsesList>
-          <ResponseContent>
+         <ResponseContent>
+         <h2 style={{ color: "white" }}>Research</h2>
             {isLoading ? (
               <Loading>Loading response content...</Loading>
             ) : (
               <p>{responseContent}</p>
             )}
           </ResponseContent>
-        {/* </ResponsesContainer> */}
-      </ContentContainer>
+         </ResponsesContainer>
+      {/* </ContentContainer>  */}
     </Container>
   );
 };
