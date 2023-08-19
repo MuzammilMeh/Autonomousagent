@@ -124,6 +124,7 @@ export const ServiceButtons = styled.div`
   margin-bottom: 20px;
 `
 
+
 export const ServiceButton = styled.button`
   background-color: ${({ selected }) => (selected ? "#010606" : "white")};
   color: ${({ selected }) => (selected ? "white" : "#010606")};

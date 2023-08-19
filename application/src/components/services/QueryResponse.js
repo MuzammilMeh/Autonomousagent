@@ -446,7 +446,7 @@ flex - direction: column;
 
 const ResponsesList = styled.div`
 flex: 1;
-margin - right: 20px;
+// margin - right: 20px;
 max - width: 400px;
 @media(min - width: 768px) {
     flex: none;
