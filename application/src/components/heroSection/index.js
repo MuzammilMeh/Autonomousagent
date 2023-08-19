@@ -25,13 +25,21 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
       <HeroContent>
-        <h1 className="h1-hero">Reaching Goals Made Easy</h1>
+        <h1 className="h1-hero">
+          Transforming Businesses with Integrated AI Solutions
+        </h1>
         <p className="hero-text">
-          Sign up today and recieve $250 in credit for your next sucessfull
+          Sign up today and receive $250 in credit for your next successful
           project.
         </p>
         <HeroBtnWrapper>
-          <ButtonR to="/signin" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark="true">
+          <ButtonR
+            to="/signin"
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+            primary="true"
+            dark="true"
+          >
             Get started {hover ? <ArrowForward /> : <ArrowRight />}
           </ButtonR>
         </HeroBtnWrapper>
