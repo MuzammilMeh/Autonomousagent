@@ -136,7 +136,7 @@ const ResearchApp = () => {
   const fetchResearchResults = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('http://127.0.0.1:5000/researched');
+      const response = await axios.get('https://muzammil002.pythonanywhere.com/researched');
       if (response.status === 200) {
         setResponses(response.data.result);
         console.log('Fetched responses:', response.data.result);
@@ -153,7 +153,7 @@ const ResearchApp = () => {
   const fetchResponseContent = async (responseName) => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`http://127.0.0.1:5000/researched/${responseName}`);
+      const response = await axios.get(`https://muzammil002.pythonanywhere.com/researched/${responseName}`);
       if (response.data.status === 'success') {
         setResponseContent(response.data.result);
         console.log('Fetched response content:', response.data.result);
@@ -175,7 +175,7 @@ const ResearchApp = () => {
   const performResearch = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:5000/research', { research: query });
+      const response = await axios.post('https://muzammil002.pythonanywhere.com/research', { research: query });
       if (response.data.status === 'success') {
         setResponseContent(response.data.result);
       } else {

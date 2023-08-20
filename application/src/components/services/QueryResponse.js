@@ -184,7 +184,7 @@ const Support = () => {
     const fetchResponses = async () => {
         setIsLoading(true);
         try {
-            const response = await axios.get('http://127.0.0.1:5000/responses');
+            const response = await axios.get('https://muzammil002.pythonanywhere.com/responses');
             setResponses(response.data.result);
         } catch (error) {
             console.error("Error fetching responses:", error);
@@ -196,7 +196,7 @@ const Support = () => {
     const fetchResponseContent = async (responseName) => {
         setIsLoading(true);
         try {
-            const response = await axios.get(`http://127.0.0.1:5000/responses/${responseName}`);
+            const response = await axios.get(`https://muzammil002.pythonanywhere.com/responses/${responseName}`);
             if (response.data.status === "success") {
                 setResponseContent(response.data.result);
             } else {
@@ -219,7 +219,7 @@ const Support = () => {
 
     const handleSupportRequest = async () => {
         setIsLoading(true);
-        const response = await axios.post('http://127.0.0.1:5000/support', { query, email: userEmail });
+        const response = await axios.post('https://muzammil002.pythonanywhere.com/support', { query, email: userEmail });
         fetchResponses(); // This will fetch and update the responses
 
 
