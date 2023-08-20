@@ -14,7 +14,6 @@ from langchain.chat_models import ChatOpenAI, ChatAnthropic
 import faiss
 from agent import AutoGPT
 from langchain.vectorstores import FAISS
-from babyagi import BabyAGI
 from typing import Optional
 
 from langchain import OpenAI
