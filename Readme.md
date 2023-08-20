@@ -25,7 +25,7 @@ We welcome contributions from the community! If you're interested in improving F
 ## Contact
 
 For inquiries and support, please reach out to:
-- Email: muzammilofficial9@gmail.com.com
+- Email: muzammilofficial9@gmail.com
 - Website: 
 
 ## License
