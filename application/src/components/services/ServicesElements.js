@@ -68,10 +68,12 @@ export const ServicesCard = styled.div`
   display: flex;
   height: 90%;
     flex-direction: column;
+    margin: 0px;
   }
   
   @media screen and (max-width: 768px) {
   display: flex;
+  margin: 0px;
 
     flex-direction: column;
     height: 90%;
@@ -84,6 +86,7 @@ export const ServicesCard = styled.div`
     flex-direction: column;
     max-width: 300px;
     height: 90%;
+    margin: 0px;
 
   }
 `;
@@ -118,6 +121,7 @@ export const ServicesP = styled.p`
 color:#B05FFB;
   font-size: 1rem;
   text-align: center;
+  max-width:300px;
 `;
 export const ServiceButtons = styled.div`
   display: flex;

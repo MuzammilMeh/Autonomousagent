@@ -79,11 +79,13 @@ const Loading = styled.p`
 `;
 
 const ResponsesContainer = styled.div`
-margin-top: 100px;
+margin-top: 50px;
 width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content:space-between;
+
 
 @media (min-width: 768px) {
   flex-direction: row;

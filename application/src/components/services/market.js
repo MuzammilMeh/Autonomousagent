@@ -89,7 +89,7 @@ margin-bottom: 20px;
 
 const ResponseContent = styled.div`
   flex: 2;
-  margin-top: 20px;
+ 
   width:50%
   @media (min-width: 768px) {
     flex: none;
@@ -113,6 +113,8 @@ width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content:space-between;
+
 
 @media (min-width: 768px) {
   flex-direction: row;
@@ -121,17 +123,7 @@ align-items: center;
 }
 `;
 
-const ContentContainer = styled.div`
-max-width: 800px;
-width: 100%;
-background-color: #ffffff;
-border-radius: 10px;
-padding: 20px;
-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-display: flex;
-// flex-direction: column;
-// align-items: center;
-`;
+
 
 const ResearchApp = () => {
   const [query, setQuery] = useState('');

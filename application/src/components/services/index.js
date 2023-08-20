@@ -16,7 +16,7 @@ const Services = () => {
           
             <ServicesH2>QueryWhisper</ServicesH2>
             <ServicesP>
-              AI that listens to queries and complaints, delivering swift and accurate solutions, and transforming interactions into positive experiences
+              AI that listens to queries and complaints, delivering swift and accurate solutions
             </ServicesP>
             
           </ServicesCard>
