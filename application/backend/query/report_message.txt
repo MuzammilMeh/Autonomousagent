@@ -1,1 +1,0 @@
-I have saved the report in the query directory. You can access the report by navigating to the following path: query/report.txt
