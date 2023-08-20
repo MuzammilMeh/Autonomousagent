@@ -30,8 +30,17 @@ CORS(app)
 
 
 def send_email(email_receiver, subject, body):
-    email_sender = "maazjavaidsiddique@gmail.com"  # Replace with your email address
-    email_password = "Maaz12.."  # Replace with your email password
+    email_sender = os.environ.get(
+        "EMAIL_SENDER"
+    )  # Retrieve sender from environment variable
+    email_password = os.environ.get(
+        "EMAIL_PASSWORD"
+    )  # Retrieve password from environment variable
+
+    if email_sender is None or email_password is None:
+        raise ValueError(
+            "EMAIL_SENDER and EMAIL_PASSWORD environment variables must be set"
+        )
 
     em = EmailMessage()
     em["From"] = email_sender
