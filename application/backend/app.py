@@ -125,7 +125,7 @@ def read_response(response_name):
 @app.route("/research", methods=["POST"])
 def handle_market_research():
     try:
-        customer_query = request.json.get("category", "")
+        customer_query = request.json.get("research", "")
         embeddings_model = OpenAIEmbeddings()
         # Initialize the vectorstore as empty
 
@@ -167,7 +167,7 @@ def handle_market_research():
 @app.route("/researched", methods=["GET"])
 def list_researched():
     try:
-        researched = os.listdir("category")
+        researched = os.listdir("research")
         return jsonify({"status": "success", "result": researched})
     except Exception as e:
         return handle_error(e)
@@ -176,7 +176,7 @@ def list_researched():
 @app.route("/researched/<researched_name>", methods=["GET"])
 def read_researched(researched_name):
     try:
-        response_path = os.path.join("category", researched_name)
+        response_path = os.path.join("research", researched_name)
         if os.path.exists(response_path):
             with open(response_path, "r") as file:
                 content = file.read()
