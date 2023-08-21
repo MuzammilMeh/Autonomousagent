@@ -18,7 +18,7 @@ function App() {
 
          <Route path="query-response" element={<QueryResponse/>} />
          <Route path="/market" element={<Market/>} />
-         <Route path="/ai_agent" element={<Ai_Agent/>} />
+         {/* <Route path="/ai_agent" element={<Ai_Agent/>} /> */}
          <Route path="/ExecutiveAssistant" element={<ExecutiveAssistant/>} />
 
        </Routes>
