@@ -10,17 +10,21 @@ const Services = () => {
     <ServicesContainer id="services">
       <ServicesH1>Our Services</ServicesH1>
       <ServicesWrapper>
-        <Link to="/query-response" style={{ textDecoration: "none" }}>
+        <a
+          href="https://appuctagent-6wrhtpgivzdlubgcvlu6fs.streamlit.app/"
+          style={{ textDecoration: "none", color: "inherit" }}
+          target="_blank" rel="noopener noreferrer"
+        >
           <ServicesCard>
             <ServicesIcon src={Icon1} />
 
-            <ServicesH2>QueryWhisper</ServicesH2>
+            <ServicesH2>Product Analyst</ServicesH2>
             <ServicesP>
-              AI that listens to queries and complaints, delivering swift and accurate solutions
+              AI that Analyze the customer complainst, delivering swift and accurate solutions
             </ServicesP>
 
           </ServicesCard>
-        </Link>
+        </a>
         <a
           href="https://research-agent-nnz9dtssqnbb3ymphtb8bz.streamlit.app/"
           style={{ textDecoration: "none", color: "inherit" }}
