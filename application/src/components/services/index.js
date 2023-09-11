@@ -21,7 +21,11 @@ const Services = () => {
 
           </ServicesCard>
         </Link>
-        <Link to="/market" style={{ textDecoration: "none" }}>
+        <a
+          href="https://research-agent-nnz9dtssqnbb3ymphtb8bz.streamlit.app/"
+          style={{ textDecoration: "none", color: "inherit" }}
+          target="_blank" rel="noopener noreferrer"
+        >
           <ServicesCard>
             <ServicesIcon src={Icon2} />
 
@@ -31,7 +35,8 @@ const Services = () => {
             </ServicesP>
 
           </ServicesCard>
-        </Link>
+        </a>
+
         {/* <Link to="/ai_agent" style={{ textDecoration: "none" }}> */}
         <a
           href="https://customer-agent-mbzag6si83giqrq6cmcnuk.streamlit.app/"
@@ -46,7 +51,7 @@ const Services = () => {
               Your attentive voice assistant that listens, understands, and acts in real-time to meet your needs.
             </ServicesP>
           </ServicesCard>
-               </a>
+        </a>
 
         {/* </Link> */}
         <Link to="/ExecutiveAssistant" style={{ textDecoration: "none" }}>
