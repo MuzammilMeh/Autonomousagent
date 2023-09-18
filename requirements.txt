@@ -1,10 +1,7 @@
-Jinja2==3.1.2
-langchain==0.0.173
-python-dotenv==1.0.0
-streamlit==1.22.0
-streamlit_chat==0.0.2.2
-elevenlabs
-streamlit_bokeh_events
+fastapi[all]
 openai
-bokeh==2.4.3
-ffmpeg-python
+python-dotenv
+pydantic==1.*
+langchain
+bs4
+tiktoken
